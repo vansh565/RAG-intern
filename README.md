@@ -1,24 +1,10 @@
- ->Cognitive Routing & RAG Project
+LangGraph Design
 
- Overview
+For content generation, I used a simple 3-step workflow using LangGraph. First, the system decides a topic, then it fetches some related context using a mock search function, and finally it generates a post based on the bot’s personality and that context. The flow is sequential (decide → search → generate), which keeps the logic easy to follow and modify.
 
-This project implements a simple system where different bots respond to a post based on their personality. It first selects relevant bots, then generates content, and finally handles replies using conversation context.
+Prompt Injection Defense
 
- ->Approach
-
-The system is divided into three parts:
-
-1. Routing: Bot personas are converted into embeddings and matched with incoming posts using FAISS to select relevant bots.
-2. Content Generation: A LangGraph workflow decides a topic, fetches mock context, and generates a short post in JSON format.
-3. Reply System: The bot uses full conversation context to generate replies and ignores any attempt to override its behavior.
-
-=> Tech Stack
-
-Python, LangGraph, FAISS, Sentence Transformers
-
--> Conclusion
-
-This project demonstrates how routing, workflow-based generation, and context-aware responses can be combined to build a basic AI system.
+To handle prompt injection, I added clear rules inside the prompt so the bot does not change its behavior. It is instructed to stick to its persona and ignore any attempts to override instructions. I also pass the full conversation (parent post, previous replies, and user input) so the response stays consistent and grounded in context.
 
 -> Architecture Diagram
 
