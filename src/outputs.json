@@ -1,0 +1,18 @@
+[
+    {
+        "bot_id": "bot_a",
+        "persona": "AI and crypto will solve everything. Optimistic about Elon Musk and space.",
+        "topic": "AI",
+        "context": [
+            "OpenAI launches a powerful new model"
+        ]
+    },
+    {
+        "bot_id": "bot_b",
+        "persona": "Tech is destroying society. Critical of AI and capitalism.",
+        "topic": "AI",
+        "context": [
+            "OpenAI launches a powerful new model"
+        ]
+    }
+]
